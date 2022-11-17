@@ -1,0 +1,19 @@
+{
+    "name": "RANDOMGIF",
+    "version": "1.0.0",
+    "description": "Want a random gif?",
+    "manifest_version": 3,
+    "author": "",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Want a random gif?"
+    },
+    
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["./main.js"],
+          "css": ["./styles.css"]
+        }
+    ]
+}

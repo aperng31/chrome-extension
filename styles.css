@@ -1,0 +1,13 @@
+#square {
+    /* height: 100px;
+    width: 100px; */
+    background-color: white;
+    position: fixed;
+    left: 100px;
+    bottom: 100px;
+    z-index: 10;
+}
+
+img {
+    height: 100px;
+}
