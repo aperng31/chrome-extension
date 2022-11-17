@@ -1,12 +1,11 @@
 {
-    "name": "RANDOMGIF",
+    "name": "GifBuddy",
     "version": "1.0.0",
-    "description": "Want a random gif?",
+    "description": "Need an animated friend while browsing the lonely world wide web?",
     "manifest_version": 3,
-    "author": "",
+    "author": "Danny Zheng and Alan Perng",
     "action":{
-        "default_popup": "index.html",
-        "default_title": "Want a random gif?"
+        "default_title": "GifBuddy"
     },
     
     "content_scripts": [
