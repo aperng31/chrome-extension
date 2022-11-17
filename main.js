@@ -16,12 +16,15 @@ function fn() {
     let str = input.value;
     let num = Math.floor(Math.random() * (10 - 1) + 1);
     console.log(num)
-    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Q67Xtt3mKHApXtX7oXiQ2sEimxiGUKtv&s=${str}&weirdness=${num}`)
-    .then((data) => data.json())
-    .then((res) => {
-        img.src = res.data.images.downsized.url;
-        console.log(res);
-    })
+    // fetch() //`https://api.giphy.com/v1/gifs/translate?api_key=Q67Xtt3mKHApXtX7oXiQ2sEimxiGUKtv&s=${str}&weirdness=${num}`
+    // .then((data) => data.json())
+    // .then((res) => {
+    //     img.src = res.data.images.downsized.url;
+    //     console.log(res);
+    // })
+    // .catch((err) => {
+    //     console.log(err);
+    // })
     // return input.value;
 }
 
