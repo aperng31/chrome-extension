@@ -5,7 +5,7 @@ class Square {
         el.appendChild(this.node);
 
         this.node.style.bottom = '100px';
-        this.node.style.left = '100px';
+        this.node.style.left = '100px';            
         console.log(this.node);
         // document.createElement('div').onmousedown = this.move
         this.node.onmousedown = this.move;
@@ -49,15 +49,18 @@ class Square {
             document.removeEventListener('mousemove', onMouseMove);
             mySquare.onmouseup = null;
             mySquare.style.position = 'fixed';
+            sessionStorage.setItem('left', mySquare.style.left)
+            sessionStorage.setItem('top', mySquare.style.top)
         };
     };
 }
 
 const square = new Square(document.body);
 const img = new Image();
-img.height = '100px';
+img.setAttribute('id','my-gif');
 square.appendImg(img);
-const input = document.querySelector("input");
+// const input = document.querySelectorAll("input");
+console.log(input);
 // input.onchange = fn();
 // input.onchange(() => console.log(input.value));
 input.addEventListener('input', fn);
@@ -67,15 +70,15 @@ function fn() {
     let str = input.value;
     let num = Math.floor(Math.random() * (10 - 1) + 1);
     console.log(num)
-    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Q67Xtt3mKHApXtX7oXiQ2sEimxiGUKtv&s=${str}&weirdness=${num}`) //`https://api.giphy.com/v1/gifs/translate?api_key=Q67Xtt3mKHApXtX7oXiQ2sEimxiGUKtv&s=${str}&weirdness=${num}`
-    .then((data) => data.json())
-    .then((res) => {
-        img.src = res.data.images.downsized.url;
-        console.log(res);
-    })
-    .catch((err) => {
-        console.log(err);
-    })
-    return input.value;
+    // fetch(`https://api.giphy.com/v1/gifs/translate?api_key=Q67Xtt3mKHApXtX7oXiQ2sEimxiGUKtv&s=${str}&weirdness=${num}`) //`https://api.giphy.com/v1/gifs/translate?api_key=Q67Xtt3mKHApXtX7oXiQ2sEimxiGUKtv&s=${str}&weirdness=${num}`
+    // .then((data) => data.json())
+    // .then((res) => {
+    //     img.src = res.data.images.downsized.url;
+    //     console.log(res);
+    // })
+    // .catch((err) => {
+    //     console.log(err);
+    // })
+    // return input.value;
 }
 
